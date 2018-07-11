@@ -5,4 +5,4 @@ handlers:
   script: auto
 
 beta_settings:
-  cloud_sql_instances: 
+  cloud_sql_instances: mysigrid-178604:asia-southeast1:datalake
