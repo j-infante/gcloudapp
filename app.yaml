@@ -1,0 +1,8 @@
+runtime: nodejs8
+
+handlers:
+- url: /.*
+  script: auto
+
+beta_settings:
+  cloud_sql_instances: 
