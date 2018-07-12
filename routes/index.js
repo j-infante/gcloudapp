@@ -33,6 +33,8 @@ router.post('/here', function(req, res, next) {
 	res.send(req);
 });
 router.post('/getDetails', function(req,res,next){
+	console.log(req);
+	console.log(req.body);
   let queryResult = req.body.queryResult;
   
 	let queryText = JSON.stringify(queryResult.queryText);

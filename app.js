@@ -1,7 +1,7 @@
 // var createError = require('http-errors');
 // var express = require('express');
 // var path = require('path');
-// var cookieParser = require('cookie-parser');
+
 // var logger = require('morgan');
 
 
@@ -59,6 +59,9 @@
 const path = require('path');
 const express = require('express');
 const config = require('./config');
+var bodyParser = require('body-parser');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
 
 var indexRouter = require('./routes/index');
 
@@ -68,6 +71,12 @@ app.disable('etag');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.set('trust proxy', true);
+
+app.use(logger('dev'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use(cookieParser());
 
 app.use('/', indexRouter);
 
